@@ -1,0 +1,22 @@
+html
+  head
+    title Stripe Payment API
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
+    link(rel="stylesheet", href="/css/main.css")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+  body
+    div(class="container")
+    form(action="/charge", method="post", class="form-signin")
+      article
+        h2(class="form-signin-heading") Enter Amount
+        label(for="inputAmount" class="sr-only") Amount
+        input(type="number" step="any" id="inputAmount" name="amount" class="form-control" placeholder="5.00" required autofocus)
+        script(
+        src="//checkout.stripe.com/v2/checkout.js",
+        class="stripe-button",
+        data-key=keyPublishable,
+        data-locale="auto",
+        data-description="Sample Charge")
+
+
+  
