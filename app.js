@@ -15,6 +15,7 @@ app.get("/", (req, res) =>
 
 app.post("/charge", (req, res) => {
   let amount = parseFloat((req.body.amount)*100);
+  console.log(req.body);
   stripe.customers.create({
      email: req.body.stripeEmail,
     source: req.body.stripeToken
@@ -30,3 +31,5 @@ app.post("/charge", (req, res) => {
 });
 
 app.listen(4567);
+
+module.exports = app;
